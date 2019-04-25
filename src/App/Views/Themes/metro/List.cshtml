@@ -1,0 +1,135 @@
+﻿@model ListModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["bodyClass"] = "home";
+    var pgr = Model.Pager;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="~/Views/Themes/metro/_Shared/_Head.cshtml" />
+</head>
+<body class="@ViewData["bodyClass"]" style="background-color:#373737">
+    <!--[if lt IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <partial name="~/Views/Themes/metro/_Shared/_Header.cshtml" />
+
+    <div class="home-cover paralax" style="background-image: url('../lib/img/handshake-cover.jpg'); position:relative;">
+        <video style="width:100%; z-index:0; position:absolute; top:0px; left:0px;" autoplay="autoplay" loop="loop" muted="muted">
+            <source src="~/lib/video/bg2.mp4" type="video/mp4" />
+        </video>
+        <h1 class="page-cover-title" style="font-family:'QType-Light'; z-index:1; ">What Makes us Different?</h1>
+        <p class="page-cover-desc" style="z-index:1; ">1. Family owned and operated<br />2. A vast range of specialty markets<br /> 3. We live, breath and eat insurance</p>
+    </div>
+
+    <div class="container" style="background-color:#fff; color:#000; position:relative; top:-50px; padding:30px; z-index:1;">
+        <h1 style="font-family:'QType-Med'">Making insurance work for you...</h1><br />
+        <p>Metro brings you the expertise and resources of a nation-wide firm, with the service and responsibility of a neighborhood office. We're a passionate team of insurance afficianodas, a micro-brewery that loves going toe-to-toe with the Goliaths of our industry. When you have a claim, we fight for you as if you were family, because that's how we treat our clients. For 20 years we've established ourselves as a one-stop shop for thousands of businesses. </p>
+        <p>Our Southern California roots date back to 1984. We've been building on a proven track-record of delivering solid coverages with an outstanding dedication to customer service. From self-starting entreprenuers, to nation-wide franchises with hundreds of employees, we insure every kind of business imaginable. Our independant agency has one of the highest renewal percentages in the industry because we represent our client's interests first and foremost. We're providing more than just cheap quotes. We're forming relationships, reducing business expsoures, and taking the time to help our clients understand the ins and outs of insurance.</p>
+        <p><strong>It's no wonder thousands of Californias have chosen Metro Insurance as their premier insurance broker. Get to know us, and we think you'll appreciate our unique brand of doing business.</strong></p>
+    </div>
+
+    <img src="~/lib/img/collage.jpg" class="img-fluid image-box" />
+    <style>
+        .str3 .str_item {
+            font-size: 0;
+            line-height: 0
+        }
+
+        .str3 img {
+            opacity: 0.8
+        }
+
+            .str3 img:hover {
+                opacity: 1
+            }
+
+        .str3.str_wrap.str_active {
+            background: #fff;
+        }
+    </style>
+    @*<div id="marq" class="str3 str_wrap">
+            <a href="#"><img src="~/lib/img/slider/boats.jpg"></a><a href="#"><img src="~/lib/img/slider/business.jpg"></a><a href="#"><img src="~/lib/img/slider/catering.jpg"></a><a href="#"><img src="~/lib/img/slider/construction.jpg"></a>
+        </div>*@
+
+
+    <div class="container white-box">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Friendly, knowledgable staff</h2>
+                <p>Our team of licensed CSRs and producers are ready to help you. We'll get your certificate fast, or help you understand your bill. We're here for you.</p>
+                Meet our team &raquo;
+            </div>
+
+            <div class="col-lg-4">
+                <h2>Competetive, affordable quotes</h2>
+                <p>Price, price, price. When it comes down to it, good rates are the mark of a killer broker. We have relationships with underwriters most don't.</p>
+                Get a quote &raquo;
+            </div>
+
+            <div class="col-lg-4">
+                <h2>We excel where others fail</h2>
+                <p>High x-mod? Declines left and right? Hard to classify business? Other brokers leting you down? We don't just take the low-hanging fruit.</p>
+                Give us a shot &raquo;
+            </div>
+        </div>
+    </div>
+
+    <div class="home-cover" style="background-image: url('../lib/img/handshake-cover.jpg');">
+        <h1 class="page-cover-title" style="font-family:'QType-Light'">What Makes us Different?</h1>
+        <p class="page-cover-desc">1. Family owned and operated<br />2. A vast range of specialty markets<br /> 3. We live, breath and eat insurance</p>
+    </div>
+
+
+        <div class="container white-box">
+            @if (Model.Posts != null)
+            {
+                foreach (var item in Model.Posts)
+                {
+                    var img = string.IsNullOrEmpty(item.Cover) ? Model.Blog.Cover : item.Cover;
+                    <article class="post">
+                        <div class="post-cover">
+                            <img src="~/@img" alt="@item.Title">
+                            @if (item.Featured)
+                            {
+                                <span class="post-featrued-label"><i class="fa fa-star"></i> @Localizer["featured"]</span>
+                            }
+                        </div>
+                        <h2 class="post-title"><a href="~/posts/@item.Slug">@item.Title</a></h2>
+                        <div class="post-meta">
+                            <a class="post-meta-author" href="~/authors/@item.Author.AppUserName">@item.Author.DisplayName</a>
+                            <time class="post-meta-time">/ @item.Published.ToFriendlyDateString()</time>
+                        </div>
+                        <div class="post-description">@Html.Raw(Markdig.Markdown.ToHtml(item.Description))</div>
+                        <a class="post-more btn btn-rounded btn-dark" href="~/posts/@item.Slug">@Localizer["read"]</a>
+                    </article>
+                }
+            }
+            @if (pgr != null && (pgr.ShowOlder || pgr.ShowNewer))
+            {
+                <ul class="pagination justify-content-center">
+                    @if (pgr.ShowOlder)
+                    {
+                        <li class="item item-prev">
+                            <a class="item-link" href="~/@pgr.LinkToOlder">
+                                <i class="item-icon fa fa-angle-left"></i>
+                            </a>
+                        </li>
+                    }
+                    @if (pgr.ShowNewer)
+                    {
+                        <li class="item item-next">
+                            <a class="item-link" href="~/@pgr.LinkToNewer">
+                                <i class="item-icon fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+
+    <partial name="~/Views/Themes/metro/_Shared/_Footer.cshtml" />
+</body>
+</html>

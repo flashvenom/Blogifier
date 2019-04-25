@@ -1,0 +1,21 @@
+﻿@font-face {
+    font-family: 'QType-Med';
+    src: url('../fonts/QTypeSquare-Medium.eot');
+    src: local('☺'), url('../fonts/QTypeSquare-Medium.woff') format('woff'), url('../fonts/QTypeSquare-Medium.ttf') format('truetype'), url('../fonts/QTypeSquare-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'QType-Light';
+    src: url('../fonts/QTypeSquare-ExtraLight.eot');
+    src: local('☺'), url('../fonts/QTypeSquare-ExtraLight.woff') format('woff'), url('../fonts/QTypeSquare-ExtraLight.ttf') format('truetype'), url('../fonts/QTypeSquare-ExtraLight.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'QType-Book';
+    src: url('../fonts/QTypeSquare-Book.eot');
+    src: local('☺'), url('../fonts/QTypeSquare-Book.woff') format('woff'), url('../fonts/QTypeSquare-Book.ttf') format('truetype'), url('../fonts/QTypeSquare-Book.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
