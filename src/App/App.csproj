@@ -29,6 +29,18 @@
   </ItemGroup>
  
   <ItemGroup>
+    <Compile Remove="Views\Themes\box\**" />
+    <Compile Remove="Views\Themes\bridge\**" />
+    <Compile Remove="Views\Themes\cheese\**" />
+    <Compile Remove="Views\Themes\material\**" />
+    <Compile Remove="Views\Themes\metal\**" />
+    <Compile Remove="Views\Themes\moments\**" />
+    <Compile Remove="Views\Themes\ocean\**" />
+    <Compile Remove="Views\Themes\Simple\**" />
+    <Compile Remove="Views\Themes\spot\**" />
+    <Compile Remove="Views\Themes\star\**" />
+    <Compile Remove="Views\Themes\vision\**" />
+    <Compile Remove="Views\Themes\wide\**" />
     <Compile Remove="wwwroot\themes\box\**" />
     <Compile Remove="wwwroot\themes\bridge\**" />
     <Compile Remove="wwwroot\themes\cheese\**" />
@@ -41,6 +53,18 @@
     <Compile Remove="wwwroot\themes\star\**" />
     <Compile Remove="wwwroot\themes\vision\**" />
     <Compile Remove="wwwroot\themes\wide\**" />
+    <Content Remove="Views\Themes\box\**" />
+    <Content Remove="Views\Themes\bridge\**" />
+    <Content Remove="Views\Themes\cheese\**" />
+    <Content Remove="Views\Themes\material\**" />
+    <Content Remove="Views\Themes\metal\**" />
+    <Content Remove="Views\Themes\moments\**" />
+    <Content Remove="Views\Themes\ocean\**" />
+    <Content Remove="Views\Themes\Simple\**" />
+    <Content Remove="Views\Themes\spot\**" />
+    <Content Remove="Views\Themes\star\**" />
+    <Content Remove="Views\Themes\vision\**" />
+    <Content Remove="Views\Themes\wide\**" />
     <Content Remove="wwwroot\admin\scss\**" />
     <Content Remove="wwwroot\themes\box\**" />
     <Content Remove="wwwroot\themes\bridge\**" />
@@ -54,6 +78,18 @@
     <Content Remove="wwwroot\themes\star\**" />
     <Content Remove="wwwroot\themes\vision\**" />
     <Content Remove="wwwroot\themes\wide\**" />
+    <EmbeddedResource Remove="Views\Themes\box\**" />
+    <EmbeddedResource Remove="Views\Themes\bridge\**" />
+    <EmbeddedResource Remove="Views\Themes\cheese\**" />
+    <EmbeddedResource Remove="Views\Themes\material\**" />
+    <EmbeddedResource Remove="Views\Themes\metal\**" />
+    <EmbeddedResource Remove="Views\Themes\moments\**" />
+    <EmbeddedResource Remove="Views\Themes\ocean\**" />
+    <EmbeddedResource Remove="Views\Themes\Simple\**" />
+    <EmbeddedResource Remove="Views\Themes\spot\**" />
+    <EmbeddedResource Remove="Views\Themes\star\**" />
+    <EmbeddedResource Remove="Views\Themes\vision\**" />
+    <EmbeddedResource Remove="Views\Themes\wide\**" />
     <EmbeddedResource Remove="wwwroot\themes\box\**" />
     <EmbeddedResource Remove="wwwroot\themes\bridge\**" />
     <EmbeddedResource Remove="wwwroot\themes\cheese\**" />
@@ -66,6 +102,18 @@
     <EmbeddedResource Remove="wwwroot\themes\star\**" />
     <EmbeddedResource Remove="wwwroot\themes\vision\**" />
     <EmbeddedResource Remove="wwwroot\themes\wide\**" />
+    <None Remove="Views\Themes\box\**" />
+    <None Remove="Views\Themes\bridge\**" />
+    <None Remove="Views\Themes\cheese\**" />
+    <None Remove="Views\Themes\material\**" />
+    <None Remove="Views\Themes\metal\**" />
+    <None Remove="Views\Themes\moments\**" />
+    <None Remove="Views\Themes\ocean\**" />
+    <None Remove="Views\Themes\Simple\**" />
+    <None Remove="Views\Themes\spot\**" />
+    <None Remove="Views\Themes\star\**" />
+    <None Remove="Views\Themes\vision\**" />
+    <None Remove="Views\Themes\wide\**" />
     <None Remove="wwwroot\themes\box\**" />
     <None Remove="wwwroot\themes\bridge\**" />
     <None Remove="wwwroot\themes\cheese\**" />
@@ -82,6 +130,10 @@
     <Content Remove="wwwroot\admin\Gruntfile.js" />
     <Content Remove="wwwroot\admin\package.json" />
     <Content Remove="wwwroot\admin\package-lock.json" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\About\Index.cshtml" />
   </ItemGroup>
  
   <ItemGroup>

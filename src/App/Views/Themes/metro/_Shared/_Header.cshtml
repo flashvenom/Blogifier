@@ -1,17 +1,41 @@
-﻿<header class="blog-header d-flex flex-column">
-    <div class="container d-flex">
-        <a href="~/" class="blog-logo my-auto d-flex">
-            <img src="~/@Model.Blog.Logo" alt="@Model.Blog.Title" class="my-auto" />
-            @if (ViewData["bodyClass"] != null && ViewData["bodyClass"].ToString() != "home")
-            {
-                <span class="my-auto">@Model.Blog.Title</span>
-            }
-        </a>
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="~/" class="blog-logo my-auto d-flex">
+        <img src="~/@Model.Blog.Logo" alt="@Model.Blog.Title" class="my-auto" />
+        @if (ViewData["bodyClass"] != null && ViewData["bodyClass"].ToString() != "home")
+        {
+            <span class="my-auto">@Model.Blog.Title</span>
+        }
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">SOLUTIONS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">SERVICE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">QUOTES</a>
+            </li>
+            <li class="nav-item nav-contact">
+                <a class="nav-link nav-link-contact" href="#">Contact Us</a>
+            </li>
+
+        </ul>
         <ul class="blog-social nav ml-auto my-auto">
-            @await Component.InvokeAsync("HtmlBlock", new { theme = "Standard", widget = "Social Buttons" })
+            <li class="blog-social-item"><a href="#" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-twitter"></i></a></li>
+            <li class="blog-social-item"><a href="#" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-youtube-play"></i></a></li>
+            <li class="blog-social-item"><a href="#" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-facebook-official"></i></a></li>
         </ul>
         <button class="blog-search-toggle btn-unstyled" type="button" data-toggle="modal" data-target="#blog-search">
             <i class="fa fa-search"></i>
         </button>
     </div>
-</header>
+</nav>

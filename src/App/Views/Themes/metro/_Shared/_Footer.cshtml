@@ -14,19 +14,19 @@
     </div>
 </div>
 
-<footer class="blog-footer">
-    <div class="container d-lg-flex text-center text-lg-left">
-        <p>Copyright © @DateTime.Now.Year. Powered by <a href="https://github.com/blogifierdotnet/Blogifier" data-toggle="tooltip" target="_blank" title="Version - @AppSettings.Version">Blogifier</a>. Designed by <a href="https://francis.bio/" target="_blank" rel="nofollow">Francis</a>.</p>
+<footer class="blog-footer" style="background-color:#000; color:#fff; padding:50px;">
+    <div class="d-lg-flex text-lg-left">
+        <img src="/lib/img/logo-plain.png" width="100" height="45" />
+        <div style="padding-left:25px;">
+            <a href="#">ABOUT</a> <a href="#">SOLUTIONS</a> <a href="#">SERVICE</a> <a href="#">QUOTES</a> <a href="#">CONTACT US</a>
+        </div><br clear="all" />
+
         <div class="ml-auto">
-            @if (User.Identity.IsAuthenticated)
-            {
-                <a href="~/admin">Admin</a>
-            }
-            else
-            {
-                <a href="~/account/login?ReturnUrl=@returnUrl">Login</a>
-            }
+            <a href="/admin">Admin</a>
         </div>
+    </div>
+    <div style="font-size:10px; padding-top:10px;">
+        Copyright © 2019 Metro Insurance Services. All Rights Reserved. Metro Insurance Services and the Metro logo are registered trademarks of Teknixs Services, Inc. Licensed by the California Department of Insurance (#OB95215).
     </div>
 </footer>
 @*<a href="#" onclick="profileLogOut(); return false;">Logoff</a>

@@ -1,3 +1,5 @@
+/* Metro revised 2 */
+
 body,
 html {
     height: 100%
@@ -115,7 +117,7 @@ body {
     z-index: 1000;
     height: 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background-color:#000;
+    background-color: #000;
 }
 
     .blog-header .container {
@@ -217,9 +219,9 @@ body {
 
     .blog-footer a {
         color: #FFF;
-        padding-right:10px;
-        font-size:14px;
-        font-weight:bold;
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: bold;
     }
 
         .blog-footer a:hover {
@@ -334,6 +336,32 @@ body {
         z-index: 1
     }
 
+.home-cover-sub {
+    padding-top: 5rem;
+    padding-bottom: 18rem;
+    position: relative;
+    color: #fff;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center
+}
+
+    .home-cover-sub::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        background: #000;
+        z-index: 700;
+        opacity: .0;
+        z-index: 0
+    }
+
+
 .home-cover-title {
     font-family: "Merriweather";
     font-size: 2.625rem;
@@ -389,12 +417,14 @@ body {
 
 .nav-contact {
     border: 1px solid #b89c50;
-    border-radius:20px;
-}
-.nav-contact:hover {
-    border: 1px solid #fff;
     border-radius: 20px;
 }
+
+    .nav-contact:hover {
+        border: 1px solid #fff;
+        border-radius: 20px;
+    }
+
 .nav-link-contact {
     margin-left: 15px !important;
     font-family: 'QType-Book';
